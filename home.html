@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Youtube clone</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <nav class="flex-div">
+        <div class="nav-left flex-div">
+            <img src="icons/menu3.svg" class="menu-icon">
+            <img src="images/logo.png" class="logo-icon">
+        </div>
+
+        <div class="nav-middle flex-div">
+            <div class="search-box flex-div">
+                <input type="text" placeholder="Search">
+                <input type="text" id="speechToTextInput">
+                <img src="images/search.png">
+            </div>
+            <img src="images/voice-search.png" class="mic-icon" id="micIcon">
+        </div>
+
+        <div class="nav-right flex-div">
+            <img src="images/upload.png" id="uploadIcon" style="cursor:pointer;">
+            <img src="images/notification.png" class="notification-icon" id="notificationIcon">
+            <img src="images/Ajay.jpeg" class="user-icon" id="userIcon" onclick="toggleDrawer()">
+        </div>
+
+
+        <!-- Dropdown Menu -->
+<div id="userDropdown" class="dropdown-content">
+    <p>Email: me.sanket.shinde@gmail.com</p>
+    <p>Login details: (Insert login details here)</p>
+    <button onclick="switchAccount()">Switch Account</button>
+    <button onclick="signOut()">Sign Out</button>
+</div>
+    
+    
+    
+    <!-- Hidden file input -->
+    <input type="file" id="fileInput" style="display: none;">
+    
+
+    </nav>
+
+    <div class="sidebar">
+        <div class="shortcut-links">
+            <a href="index.html"><img src="images/home.png"><p>Home</p></a>
+            <a href="explore.html"><img src="images/explore.png"><p>Explore</p></a>
+            <a href="subcription.html"><img src="images/subscriprion.png"><p>Subscription</p></a>
+            <a href=""><img src="images/library.png"><p>Library</p></a>
+            <a href=""><img src="images/history.png"><p>History</p></a>
+            <a href=""><img src="images/playlist.png"><p>Playlist</p></a>
+            <a href=""><img src="images/messages.png"><p>Messages</p></a>
+            <a href=""><img src="images/show-more.png"><p>show more</p></a>
+            <hr>
+        </div>
+
+        <div class="subscribe-list">
+            <h3>SUBSCRIBED</h3>
+            <a href=""><img src="images/Ajay.jpeg"><p>Sanket </p> </a>
+            <a href=""><img src="images/Mayur.JPG"><p>Mayur</p> </a>
+            <a href=""><img src="images/Sanket (2).jpeg"><p>Ajay</p> </a>
+            <a href=""><img src="images/Jack.png"><p>Devesh</p> </a>
+            <a href=""><img src="images/cameron.png"><p>Ajinkya</p> </a>
+        </div>
+    </div>
+
+    <!--Main Video section-->
+
+    <div class="content">
+        <div class="banner">
+            <img src="images/BANNER.svg">
+        </div>
+
+
+        <div class="search-box flex-div">
+            <input type="text" id="searchInput" placeholder="Search">
+            <img src="images/search.png">
+        </div>
+
+        <div class="list-container">
+            <!-- Video 1 -->
+            <div class="vid-list">
+                <a href="play-video.html"><img src="images/msdhoni.jpeg" class="thumbnail"></a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?icc">
+                    <div class="vid-info">
+                        <h5>Tribute to MS Dhoni</h5>
+                        <p>Mayur</p>
+                        <p>120m views &bull;2 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 2 -->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/INTRO VIDEO.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?youtube" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?Technology">
+                    <div class="vid-info">
+                        <h5>Boring Brains Introduction</h5>
+                        <p>Boring Brains</p>
+                        <p>150k views &bull;6 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 3 -->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Nature.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?nature" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?earth">
+                    <div class="vid-info">
+                        <h5>8k Nature videos</h5>
+                        <p>Nature go</p>
+                        <p>1m views &bull; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Video 4 -->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Justin Timberlake.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?Concert" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?maharashtra">
+                    <div class="vid-info">
+                        <h5>Mirros</h5>
+                        <p>Justin Timberlake</p>
+                        <p>150m views &bull; 4 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Video 5 -->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Space.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?Space" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?galaxy">
+                    <div class="vid-info">
+                        <h5>Space lifes</h5>
+                        <p>ISRO</p>
+                        <p>654k views &bull; 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Video 6-->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Song.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?Marathi" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?song">
+                    <div class="vid-info">
+                        <h5>Marathi Song</h5>
+                        <p>Marathi Tadka</p>
+                        <p>64k views &bull; 5 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 7 -->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Nature.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?cartoon" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?tom,jerry">
+                    <div class="vid-info">
+                        <h5>Tom and jerry</h5>
+                        <p>CArtoon networks</p>
+                        <p>1m views &bull; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Video 8 -->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Nature.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?beach" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?rain">
+                    <div class="vid-info">
+                        <h5>Rain songs</h5>
+                        <p>T-series</p>
+                        <p>1m views &bull; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <!-- Video 3 -->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Nature.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?nature" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?earth">
+                    <div class="vid-info">
+                        <h5>8k Nature videos</h5>
+                        <p>Nature go</p>
+                        <p>1m views &bull; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+             <!-- Video 4 -->
+             <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Justin Timberlake.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?Concert" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?maharashtra">
+                    <div class="vid-info">
+                        <h5>Mirros</h5>
+                        <p>Justin Timberlake</p>
+                        <p>150m views &bull; 4 years ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Space.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?Space" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?galaxy">
+                    <div class="vid-info">
+                        <h5>Space lifes</h5>
+                        <p>ISRO</p>
+                        <p>654k views &bull; 2 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Video 6-->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Song.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?news" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?song">
+                    <div class="vid-info">
+                        <h5>Marathi Song</h5>
+                        <p>Marathi Tadka</p>
+                        <p>64k views &bull; 5 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Video 7 -->
+            <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Nature.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?money" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?tom,jerry">
+                    <div class="vid-info">
+                        <h5>Tom and jerry</h5>
+                        <p>CArtoon networks</p>
+                        <p>1m views &bull; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+             <!-- Video 7 -->
+             <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Nature.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?bikes" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?tom,jerry">
+                    <div class="vid-info">
+                        <h5>Tom and jerry</h5>
+                        <p>CArtoon networks</p>
+                        <p>1m views &bull; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+             <!-- Video 7 -->
+             <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Nature.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?cars" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?tom,jerry">
+                    <div class="vid-info">
+                        <h5>Tom and jerry</h5>
+                        <p>CArtoon networks</p>
+                        <p>1m views &bull; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+             <!-- Video 7 -->
+             <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Nature.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?football" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?tom,jerry">
+                    <div class="vid-info">
+                        <h5>Tom and jerry</h5>
+                        <p>CArtoon networks</p>
+                        <p>1m views &bull; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Video 7 -->
+             <div class="vid-list">
+                <a href="#" onclick="playVideo('videos/Nature.mp4')">
+                    <img src="https://source.unsplash.com/320x180/?history" class="thumbnail">
+                </a>
+                <div class="flex-div">
+                    <img src="https://source.unsplash.com/320x180/?tom,jerry">
+                    <div class="vid-info">
+                        <h5>Tom and jerry</h5>
+                        <p>CArtoon networks</p>
+                        <p>1m views &bull; 4 days ago</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

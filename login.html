@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Youtube clone</title>
+
+    <link rel="website icon" type="png" sizes="32x32" href="images/logo.png">
+
+    <link rel="stylesheet" href="styles2.css">
+
+</head>
+
+<body>
+
+    <div class="mainbox">
+        <div class="form-box">
+            <div class="button-box">
+                <div id="btn"></div>
+                <button type="button" class="toggle-btn" onclick="login()">Log In</button>
+                <button type="button" class="toggle-btn" onclick="register()">Sign Up</button>
+            </div>
+            <div class="word">
+                <h1>Login Page</h1>
+            </div>
+
+            <form id="login" class="input-group">
+
+                        Email Address
+                        <input type="email" name="username" class="input-field" placeholder="" required>
+                        Password:
+                        <input type="password"  name="password" class="input-field" id="inputUser" placeholder="" required>
+
+                        <input type="checkbox" onclick="myOnFunction()"> Show Password
+
+                <script> function myOnFunction() {
+                        var x = document.getElementById("inputUser");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }</script>
+
+                <input type="checkbox" class="check-box">
+                <p class="term"> Remember me </p>
+
+                
+                <button type="button" onclick="window.location.href='home.html'" class="submit-btn">Log in</button>
+
+
+            </form>
+
+
+            <form id="register" class="input-group">
+
+                        Username:
+                        <input type="text" class="input-field" placeholder="" required>
+                        Email address:
+                        <input type="email" class="input-field" placeholder="" required>
+                        Password:
+                        <input type="password" class="input-field" id="theInput" placeholder="" required>
+
+                        <input type="checkbox" onclick="OnFunction()"> Show Password
+
+                <script>
+                    function OnFunction() {
+                        var x = document.getElementById("theInput");
+                        if (x.type === "password") {
+                            x.type = "text";
+                        } else {
+                            x.type = "password";
+                        }
+                    }
+                </script>
+
+
+
+                <input type="checkbox" class="check-box">
+                <p class="term"> I agree to the <a href="#" class="no-underline">terms and conditions</a> </p>
+
+                <button type="submit" id="clearButton" class="submit-btn">Register</button>
+            </form>
+           
+        </div>
+
+    </div>
+
+    <script>
+        var x = document.getElementById("login")
+        var y = document.getElementById("register")
+        var z = document.getElementById("btn")
+
+        function register() {
+            x.style.left = "-400px";
+            y.style.left = "50px";
+            z.style.left = "110px";
+        }
+
+        function login() {
+            x.style.left = "50px";
+            y.style.left = "450px";
+            z.style.left = "0";
+        }
+    </script>
+
+</body>
+
+</html>
